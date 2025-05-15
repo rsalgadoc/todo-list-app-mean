@@ -74,6 +74,10 @@ ng g s service/webrequest
 ng g c components/todo-add
 ```
 
+```bash
+#Creates the directory src/environments/ containing environment.ts (default/production) and environment.development.ts. These files hold environment-specific variables.
+ng generate environments
+```
 
 ```bash
 ng serve --open

@@ -57,3 +57,18 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+
+
+```bash
+docker build -t rsalgadoc/frontend-todo-list .
+```
+# Debido a que el build en AWS se queda pegado, por se una instancia muy pequeña, subir a DockerHub con el siguiente comando:
+```bash
+docker push rsalgadoc/frontend-todo-list
+```
+
+```bash
+docker run -d --name frontend-todo-list -p 80:80 --restart always rsalgadoc/frontend-todo-list
+```

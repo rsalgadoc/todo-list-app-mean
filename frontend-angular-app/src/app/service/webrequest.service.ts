@@ -2,6 +2,7 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from './../../environments/environment';
 
 @Injectable({
     providedIn: 'root'
@@ -9,7 +10,7 @@ import { Injectable } from '@angular/core';
 export class WebrequestService {
     readonly Root_URL;
     constructor(private http: HttpClient) {
-        this.Root_URL = "http://localhost:3001/";
+        this.Root_URL = environment.baseUrl;
     }
 
     get(uri: string) {
