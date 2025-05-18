@@ -1,0 +1,36 @@
+# Use a smaller, more secure base image
+FROM node:23-alpine AS builder
+
+# Set working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci --only=production
+
+# Copy source files
+COPY . .
+
+# Build the application (if needed)
+# RUN npm run build
+
+# Stage 2: Production image
+FROM node:23-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Copy only the necessary files from the builder stage
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package*.json ./
+
+# Expose the port your app runs on
+EXPOSE 3000
+
+# Set environment variables
+ENV NODE_ENV=production
+
+# Command to run the application
+CMD ["node", "index.js"]

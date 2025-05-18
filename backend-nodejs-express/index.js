@@ -5,7 +5,7 @@ import bodyParser from 'body-parser';
 import employeeRouters from './controllers/employeeRouters.js';
 
 const app = express();
-const port = 3001;
+const port = 3000;
 
 // CORS configuration
 app.use(function (req, res, next) {
