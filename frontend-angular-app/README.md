@@ -70,5 +70,8 @@ docker push rsalgadoc/frontend-todo-list
 ```
 
 ```bash
-docker run -d --name frontend-todo-list -p 80:80 --restart always rsalgadoc/frontend-todo-list
+docker run -d --name frontend-todo-list -p 82:80 --restart always rsalgadoc/frontend-todo-list
 ```
+
+
+curl http://172.31.13.246:82
