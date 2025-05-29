@@ -29,7 +29,11 @@ docker push rsalgadoc/backend-todo-list
 ```
 
 ```bash
-docker run -d --name backend-todo-list -p 3001:3000 --restart always rsalgadoc/backend-todo-list
+docker pull rsalgadoc/backend-todo-list
+```
+
+```bash
+docker run -d --name backend-todo-list --env-file .env -p 3001:3000 --restart always rsalgadoc/backend-todo-list
 ```
 
 
