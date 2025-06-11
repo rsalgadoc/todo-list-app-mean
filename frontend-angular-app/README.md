@@ -75,3 +75,8 @@ docker run -d --name frontend-todo-list -p 82:80 --restart always rsalgadoc/fron
 
 
 curl http://172.31.13.246:82
+
+
+```bash
+ng build --configuration production
+```
